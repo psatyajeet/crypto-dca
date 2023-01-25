@@ -1,0 +1,37 @@
+{
+  "name": "crypto-dca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dst",
+    "build": "npm run clean && tsc",
+    "jobs": "npm run build; node dst/jobs.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cron": "^1.7.1",
+    "@types/lodash": "^4.14.149",
+    "@types/moment-timezone": "^0.5.12",
+    "axios": "^0.19.0",
+    "coinbase-pro": "^0.9.0",
+    "cron": "^1.7.2",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "moment-timezone": "^0.5.35",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "tslog": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "ts-node": "^10.2.0",
+    "typescript": "^3.9.10"
+  }
+}
