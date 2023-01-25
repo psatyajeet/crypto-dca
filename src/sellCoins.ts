@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import { getOrder, sell } from './coinbaseCloudApi';
 import { wait } from './helpers';
 import log from './logger';
+import { MS_IN_SECOND } from './time';
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
@@ -21,7 +22,7 @@ async function sellCoin(coin, amount) {
 
   const orderId = order.order_id;
 
-  await wait(60 * 1000);
+  await wait(5 * MS_IN_SECOND);
 
   const fill = await getOrder(orderId);
   if (fill.order.status === 'FILLED') {

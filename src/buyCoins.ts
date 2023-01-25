@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { authedClient, checkSufficientFunds } from './coinbase';
 import { wait } from './helpers';
 import log from './logger';
+import { MS_IN_SECOND } from './time';
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
@@ -40,7 +41,7 @@ async function buyCoin(coin, amount) {
     order_id: order.id,
   });
 
-  await wait(60 * 1000);
+  await wait(5 * MS_IN_SECOND);
   if (checkFilled(fills, order.id)) {
     log.info(`Success! Order: ${order.id}`);
   } else {

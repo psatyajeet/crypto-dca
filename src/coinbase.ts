@@ -4,6 +4,7 @@ import crypto from 'crypto';
 import dotenv from 'dotenv';
 import _ from 'lodash';
 import log from './logger';
+import { MS_IN_SECOND } from './time';
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
@@ -46,7 +47,7 @@ function signMessage(
 }
 
 async function makeRequest(requestPath: string, method: any, body?: any) {
-  const timestamp = _.round(Date.now() / 1000, 0).toString();
+  const timestamp = _.round(Date.now() / MS_IN_SECOND, 0).toString();
   const signature = signMessage(timestamp, requestPath, method, body);
 
   try {
