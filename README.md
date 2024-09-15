@@ -51,7 +51,8 @@ OR
 
 ## Setup Lambda
 
-- We'll use an EventBridge (CloudWatch Events) as a trigger
+- We'll use an EventBridge (CloudWatch Events) as a trigger. Here are links to the triggers:
+-- https://us-east-1.console.aws.amazon.com/scheduler/home?region=us-east-1#schedules/default/sell-coins-weekly
 - Create some test events. Here is an AddFunds event
 ```
 {
@@ -66,6 +67,14 @@ OR
   "action": "buyCoins",
   "coin": "ETH",
   "amount": 40
+}
+```
+-- Here is a SellEvent for BTC
+```
+{
+  "action": "sellCoins",
+  "coin": "BTC",
+  "amount": 100
 }
 ```
 

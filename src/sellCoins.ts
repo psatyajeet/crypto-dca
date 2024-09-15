@@ -13,7 +13,7 @@ function sleep(ms: number) {
 }
 
 async function sellCoin(coin, amount) {
-  log.info(`Selling...$${amount} ${coin}`);
+  log.info(`Selling...${amount} ${coin}`);
   const order: {
     success: boolean;
     failure_reason: string;
